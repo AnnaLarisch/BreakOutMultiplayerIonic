@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8" />
   <title>Ionic App</title>
 
@@ -17,10 +18,30 @@
   <!-- add to homescreen for ios -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <script>
+    if (global === undefined) {
+      var global = window;
+    }
+  </script>
 </head>
 
 <body>
   <app-root></app-root>
+  <button onClick="sendMsg()">Hit Me</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.js"></script>
+
+ <script>
+    const socket = io("http://localhost:8100");
+    
+
+    function sendMsg() {
+      socket.emit("message", "HELLO WORLD");
+    }
+    socket.on("message", function(data) {
+      console.log(data);
+    });
+  </script>  
 </body>
 
 </html>

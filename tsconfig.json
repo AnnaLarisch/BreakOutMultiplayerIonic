@@ -12,9 +12,19 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": ["es2018", "dom"]
+    "lib": ["es2018", "dom", "scripthost"],
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "*": [
+          "node_modules/",
+          "src/types/*"
+      ]
+  }
   },
-  "angularCompilerOptions": {
+  "include": [
+    "src/**/*"
+  ],
+    "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
