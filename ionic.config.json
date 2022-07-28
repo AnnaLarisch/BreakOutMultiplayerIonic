@@ -1,0 +1,7 @@
+{
+  "name": "BreakOutMultiplayerIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
